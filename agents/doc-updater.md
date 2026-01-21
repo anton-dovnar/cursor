@@ -150,8 +150,8 @@ User → Markets Page → API Route → Supabase → Redis (optional) → Respon
 ```markdown
 # Server Architecture
 
-**Last Updated:** YYYY-MM-DD  
-**Runtime:** Django + Django REST Framework  
+**Last Updated:** YYYY-MM-DD
+**Runtime:** Django + Django REST Framework
 **Entry Point:** project_root/project_name/urls.py
 
 ## API Endpoints
@@ -169,9 +169,9 @@ Django URL Router → DRF View → Service Layer → ORM Query → Redis (cache)
 
 ## External Services
 
-- PostgreSQL — Primary relational database  
-- Redis — Caching + optional vector search  
-- OpenAI — Embedding generation for semantic search  
+- PostgreSQL — Primary relational database
+- Redis — Caching + optional vector search
+- OpenAI — Embedding generation for semantic search
 ```
 
 ### Integrations Codemap (docs/CODEMAPS/integrations.md)

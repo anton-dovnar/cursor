@@ -179,7 +179,7 @@ cursor.execute(query)  # Vulnerable
 cursor.execute("SELECT * FROM users WHERE id = %s", [user_id])
 rows = cursor.fetchall()
 
-# Or With django ORM: 
+# Or With django ORM:
 user = User.objects.filter(id=user_id).first()
 ```
 
