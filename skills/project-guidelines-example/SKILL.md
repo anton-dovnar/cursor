@@ -7,8 +7,6 @@ description: Project-specific skill template and example guidelines.
 
 This is an example of a project-specific skill. Use this as a template for your own projects.
 
-Based on a real production application: [Zenith](https://zenith.chat) - AI-powered customer discovery platform.
-
 ---
 
 ## When to Use
@@ -25,34 +23,30 @@ Reference this skill when working on the specific project it's designed for. Pro
 ## Architecture Overview
 
 **Tech Stack:**
-- **Frontend**: Next.js 15 (App Router), TypeScript, React
-- **Backend**: FastAPI (Python), Pydantic models
-- **Database**: Supabase (PostgreSQL)
-- **AI**: Claude API with tool calling and structured output
-- **Deployment**: Google Cloud Run
-- **Testing**: Playwright (E2E), pytest (backend), React Testing Library
+- **Client**: Nuxt, TypeScript, Vue
+- **Backend**: Django (Python), Django Rest Framework
+- **Database**: PostgreSQL
+- **Testing**: Playwright (E2E), pytest (server)
 
 **Services:**
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                         Frontend                            │
-│  Next.js 15 + TypeScript + TailwindCSS                     │
-│  Deployed: Vercel / Cloud Run                              │
+│  Nuxt + TypeScript + TailwindCSS                            │
 └─────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
 │                         Backend                             │
-│  FastAPI + Python 3.11 + Pydantic                          │
-│  Deployed: Cloud Run                                       │
+│  Django + Python                                            │
 └─────────────────────────────────────────────────────────────┘
                               │
               ┌───────────────┼───────────────┐
-              ▼               ▼               ▼
-        ┌──────────┐   ┌──────────┐   ┌──────────┐
-        │ Supabase │   │  Claude  │   │  Redis   │
-        │ Database │   │   API    │   │  Cache   │
-        └──────────┘   └──────────┘   └──────────┘
+              ▼                               ▼
+        ┌──────────┐                     ┌──────────┐
+        │ Postgres │                     │  Redis   │
+        │ Database │                     │  Cache   │
+        └──────────┘                     └──────────┘
 ```
 
 ---
@@ -61,29 +55,90 @@ Reference this skill when working on the specific project it's designed for. Pro
 
 ```
 project/
-├── frontend/
+├── client/
 │   └── src/
-│       ├── app/              # Next.js app router pages
-│       │   ├── api/          # API routes
-│       │   ├── (auth)/       # Auth-protected routes
-│       │   └── workspace/    # Main app workspace
-│       ├── components/       # React components
-│       │   ├── ui/           # Base UI components
-│       │   ├── forms/        # Form components
-│       │   └── layouts/      # Layout components
-│       ├── hooks/            # Custom React hooks
-│       ├── lib/              # Utilities
-│       ├── types/            # TypeScript definitions
-│       └── config/           # Configuration
+│       ├── pages/                     # Nuxt pages (routing)
+│       │   ├── auth/                  # Public auth pages (login, register)
+│       │   └── workspace/             # Main app workspace pages
+│       │
+│       ├── server/                    # Nuxt server engine
+│       │   └── api/                   # API routes (server/api/*)
+│       │       ├── auth/              # Auth endpoints
+│       │       └── workspace/         # Workspace endpoints
+│       │
+│       ├── middleware/                # Route middleware
+│       │   ├── auth.global.ts
+│       │   └── workspace.ts
+│       │
+│       ├── components/                # Auto‑imported Vue components
+│       │   ├── ui/
+│       │   ├── forms/
+│       │   └── layouts/
+│       │
+│       ├── layouts/                   # Nuxt layouts
+│       │   ├── default.vue
+│       │   └── workspace.vue
+│       │
+│       ├── composables/               # Nuxt composables (hooks)
+│       │   ├── useAuth.ts
+│       │   ├── useWorkspace.ts
+│       │   └── useApi.ts
+│       │
+│       ├── utils/                     # General utilities
+│       │   ├── validation.ts
+│       │   ├── formatters.ts
+│       │   └── constants.ts
+│       │
+│       ├── types/                     # TypeScript definitions
+│       │   ├── auth.d.ts
+│       │   ├── workspace.d.ts
+│       │   └── api.d.ts
+│       │
+│       ├── config/                    # App configuration
+│       │   ├── env.ts
+│       │   ├── api.ts
+│       │   └── constants.ts
+│       │
+│       ├── plugins/                   # Nuxt plugins
+│       │   ├── axios.ts
+│       │   └── auth.client.ts
+│       │
+│       ├── assets/                    # Styles, images, fonts
+│       │   ├── css/
+│       │   └── images/
+│       │
+│       ├── public/                    # Static files
+│       │   └── favicon.ico
+│       │
+│       └── app.vue                    # Root component
 │
-├── backend/
-│   ├── routers/              # FastAPI route handlers
-│   ├── models.py             # Pydantic models
-│   ├── main.py               # FastAPI app entry
-│   ├── auth_system.py        # Authentication
-│   ├── database.py           # Database operations
-│   ├── services/             # Business logic
-│   └── tests/                # pytest tests
+server/
+├── config/                   # Django project package
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── asgi.py
+│   └── wsgi.py
+│
+├── app/                      # Main Django app
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   ├── services/
+│   │   └── __init__.py
+│   ├── auth_system/
+│   │   ├── __init__.py
+│   │   ├── backends.py
+│   │   └── utils.py
+│   ├── database/
+│   │   ├── __init__.py
+│   │   └── queries.py
+│   └── tests/
+│       ├── __init__.py
+│       └── test_basic.py
 │
 ├── deploy/                   # Deployment configs
 ├── docs/                     # Documentation
@@ -271,13 +326,13 @@ class ApiExecutor:
 
 ```bash
 # Run all tests
-poetry run pytest tests/
+uv run pytest tests/
 
 # Run with coverage
-poetry run pytest tests/ --cov=. --cov-report=html
+uv run pytest tests/ --cov=. --cov-report=html
 
 # Run specific test file
-poetry run pytest tests/test_auth.py -v
+uv run pytest tests/test_auth.py -v
 ```
 
 **Test structure:**
@@ -302,13 +357,13 @@ async def test_health_check(client: AsyncClient):
 
 ```bash
 # Run tests
-pytest tests/
+uv run pytest tests/
 
 # Run with coverage
-pytest tests/ --cov=. --cov-report=html
+uv run pytest tests/ --cov=. --cov-report=html
 
 # Run E2E tests
-pytest tests/e2e/
+uv run pytest tests/e2e/
 ```
 
 **Test structure:**
@@ -348,33 +403,6 @@ async def test_creates_session_successfully(workspace_service):
 - [ ] Environment variables documented
 - [ ] Database migrations ready
 
-### Deployment Commands
-
-```bash
-# Build and deploy frontend
-cd frontend && npm run build
-gcloud run deploy frontend --source .
-
-# Build and deploy backend
-cd backend
-gcloud run deploy backend --source .
-```
-
-### Environment Variables
-
-```bash
-# Frontend (.env.local)
-NEXT_PUBLIC_API_URL=https://api.example.com
-NEXT_PUBLIC_SUPABASE_URL=https://xxx.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJ...
-
-# Backend (.env)
-DATABASE_URL=postgresql://...
-ANTHROPIC_API_KEY=sk-ant-...
-SUPABASE_URL=https://xxx.supabase.co
-SUPABASE_KEY=eyJ...
-```
-
 ---
 
 ## Critical Rules
@@ -384,7 +412,7 @@ SUPABASE_KEY=eyJ...
 3. **TDD** - write tests before implementation
 4. **80% coverage** minimum
 5. **Many small files** - 200-400 lines typical, 800 max
-6. **No console.log** in production code
+6. **No print** in production code
 7. **Proper error handling** with try/catch
 8. **Input validation** with Pydantic/Zod
 
@@ -393,6 +421,6 @@ SUPABASE_KEY=eyJ...
 ## Related Skills
 
 - `coding-standards.md` - General coding best practices
-- `backend-patterns.md` - API and database patterns
-- `frontend-patterns.md` - React and Next.js patterns
+- `server-patterns.md` - API and database patterns
+- `client-patterns.md` - React and Next.js patterns
 - `tdd-workflow/` - Test-driven development methodology
