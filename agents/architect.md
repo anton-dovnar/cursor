@@ -110,14 +110,14 @@ For each design decision, document:
 
 ## Common Patterns
 
-### Frontend Patterns
+### Client Patterns
 - **Component Composition**: Build complex UI from simple components
 - **Container/Presenter**: Separate data logic from presentation
 - **Custom Hooks**: Reusable stateful logic
 - **Context for Global State**: Avoid prop drilling
 - **Code Splitting**: Lazy load routes and heavy components
 
-### Backend Patterns
+### Server Patterns
 - **Repository Pattern**: Abstract data access
 - **Service Layer**: Business logic separation
 - **Middleware Pattern**: Request/response processing
@@ -218,15 +218,15 @@ Watch for these architectural anti-patterns:
 Example architecture for an AI-powered SaaS platform:
 
 ### Current Architecture
-- **Frontend**: Next.js 15 (Vercel/Cloud Run)
-- **Backend**: FastAPI or Express (Cloud Run/Railway)
+- **Client**: Next.js 15 (Vercel/Cloud Run)
+- **Server**: FastAPI or Express (Cloud Run/Railway)
 - **Database**: PostgreSQL (Supabase)
 - **Cache**: Redis (Upstash/Railway)
 - **AI**: Claude API with structured output
 - **Real-time**: Supabase subscriptions
 
 ### Key Design Decisions
-1. **Hybrid Deployment**: Vercel (frontend) + Cloud Run (backend) for optimal performance
+1. **Hybrid Deployment**: Vercel (client) + Cloud Run (server) for optimal performance
 2. **AI Integration**: Structured output with Pydantic/Zod for type safety
 3. **Real-time Updates**: Supabase subscriptions for live data
 4. **Immutable Patterns**: Spread operators for predictable state
