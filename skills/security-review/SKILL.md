@@ -468,7 +468,7 @@ async def verify_transaction(transaction: Transaction) -> bool:
 uv run pip-audit
 
 # Update dependencies (poetry)
-uv add <dependency>@<version>
+uv add <dependency>==<version>
 ```
 
 #### Lock Files
