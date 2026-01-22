@@ -5,8 +5,8 @@ Analyze the codebase structure and update architecture documentation:
 1. Scan all source files for imports, exports, and dependencies
 2. Generate token-lean codemaps in the following format:
    - codemaps/architecture.md - Overall architecture
-   - codemaps/server.md - Backend structure
-   - codemaps/client.md - Frontend structure
+   - codemaps/server.md - Server structure
+   - codemaps/client.md - Client structure
    - codemaps/data.md - Data models and schemas
 
 3. Calculate diff percentage from previous version
