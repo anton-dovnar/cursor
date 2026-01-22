@@ -33,6 +33,12 @@ Universal coding standards applicable across all projects.
 - Add complexity only when required
 - Start simple, refactor when needed
 
+### 5. SOLID Principles
+- A set of five design guidelines for maintainable, scalable, and testable code
+- Encourages separation of responsibilities and clear abstractions
+- Helps avoid tightly coupled, fragile architectures
+- Supports long‑term evolution of the codebase without breaking existing behavior
+
 ## Python Standards
 
 ### Variable Naming
