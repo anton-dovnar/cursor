@@ -31,7 +31,7 @@ def test_search_markets_returns_similar_results():
 
 ### Step 2: Run Test (Verify it FAILS)
 ```bash
-pytest
+uv run pytest
 # Test should fail - we haven't implemented yet
 ```
 
@@ -47,7 +47,7 @@ def search_markets(query: str):
 
 ### Step 4: Run Test (Verify it PASSES)
 ```bash
-pytest
+uv run pytest
 # Test should now pass
 ```
 
@@ -59,7 +59,7 @@ pytest
 
 ### Step 6: Verify Coverage
 ```bash
-pytest --cov=app --cov-report=term-missing
+uv run pytest --cov=app --cov-report=term-missing
 # Verify 80%+ coverage
 ```
 
@@ -308,7 +308,7 @@ def test_updates_user(db):
 
 ```bash
 # Run tests with coverage
-pytest --cov=app --cov-report=html
+uv run pytest --cov=app --cov-report=html
 
 # View HTML report
 open htmlcov/index.html
@@ -324,13 +324,13 @@ Required thresholds:
 
 ```bash
 # Watch mode during development
-pytest-watch
+uv run pytest-watch
 
 # Run before commit (via pre-commit hook)
 pre-commit run --all-files
 
 # CI/CD integration
-pytest --cov=app --cov-report=xml
+uv run pytest --cov=app --cov-report=xml
 ```
 
 **Remember**: No code without tests. Tests are not optional. They are the safety net that enables confident refactoring, rapid development, and production reliability.
