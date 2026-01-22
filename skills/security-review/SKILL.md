@@ -465,31 +465,19 @@ async def verify_transaction(transaction: Transaction) -> bool:
 #### Regular Updates
 ```bash
 # Check for vulnerabilities (pip)
-pip-audit
-
-# Check for vulnerabilities (poetry)
-poetry audit
-
-# Update dependencies (pip)
-pip list --outdated
-pip install --upgrade package_name
+uv run pip-audit
 
 # Update dependencies (poetry)
-poetry update
-
-# Check for outdated packages (poetry)
-poetry show --outdated
+uv add <dependency>@<version>
 ```
 
 #### Lock Files
 ```bash
 # ALWAYS commit lock files
-git add requirements.txt  # or poetry.lock
+git add requirements.txt  # or uv.lock
 
 # Use in CI/CD for reproducible builds
 pip install -r requirements.txt  # Instead of pip install package_name
-# or
-poetry install --no-dev  # Instead of poetry add package_name
 ```
 
 #### Verification Steps
@@ -564,9 +552,8 @@ Before ANY production deployment:
 ## Resources
 
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/)
-- [Next.js Security](https://nextjs.org/docs/security)
-- [Supabase Security](https://supabase.com/docs/guides/auth)
 - [Web Security Academy](https://portswigger.net/web-security)
+- [All Security Topics]https://portswigger.net/web-security/all-topics
 
 ---
 
