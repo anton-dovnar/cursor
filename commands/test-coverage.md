@@ -2,7 +2,7 @@
 
 Analyze test coverage and generate missing tests:
 
-1. Run tests with coverage: pytest --cov=. --cov-report=json
+1. Run tests with coverage: uv run pytest --cov=. --cov-report=json
 
 2. Analyze coverage report (coverage.json generated in the project root)
 
