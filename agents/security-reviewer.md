@@ -15,7 +15,7 @@ You are an expert security specialist focused on identifying and remediating vul
 2. **Secrets Detection** - Find hardcoded API keys, passwords, tokens
 3. **Input Validation** - Ensure all user inputs are properly sanitized
 4. **Authentication/Authorization** - Verify proper access controls
-5. **Dependency Security** - Check for vulnerable npm packages
+5. **Dependency Security** - Check for vulnerable bun packages
 6. **Security Best Practices** - Enforce secure coding patterns
 
 ## Security Review Workflow
@@ -84,7 +84,7 @@ For each category, check:
 
 9. Using Components with Known Vulnerabilities
    - Are all dependencies up to date?
-   - Is npm audit clean?
+   - Is bun audit clean?
    - Are CVEs monitored?
 
 10. Insufficient Logging & Monitoring

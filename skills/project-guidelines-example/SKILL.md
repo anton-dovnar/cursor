@@ -397,8 +397,8 @@ async def test_creates_session_successfully(workspace_service):
 ### Pre-Deployment Checklist
 
 - [ ] All tests passing locally
-- [ ] `npm run build` succeeds (frontend)
-- [ ] `poetry run pytest` passes (backend)
+- [ ] `bun build` succeeds (client)
+- [ ] `uv run pytest` passes (server)
 - [ ] No hardcoded secrets
 - [ ] Environment variables documented
 - [ ] Database migrations ready
