@@ -55,7 +55,7 @@ Include specific examples of how to fix issues.
 ## Performance (MEDIUM)
 
 - Inefficient algorithms (O(n²) when O(n log n) possible)
-- Unnecessary re-renders in Vue
+- Unnecessary re-renders
 - Missing memoization
 - Large bundle sizes
 - Missing caching
