@@ -7,7 +7,7 @@ alwaysApply: false
 
 ## Available Agents
 
-Located in `~/.cursor/agents/`:
+Agent prompt files live in this repository at `~/.cursor/agents/`. After syncing this tree to your user config (see root `AGENTS.md`).
 
 | Agent | Purpose | When to Use |
 |-------|---------|-------------|

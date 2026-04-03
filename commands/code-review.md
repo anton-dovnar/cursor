@@ -1,3 +1,7 @@
+---
+description: Run a security- and quality-focused review of uncommitted changes (git diff).
+---
+
 # Code Review
 
 Comprehensive security and quality review of uncommitted changes:
@@ -38,3 +42,12 @@ Comprehensive security and quality review of uncommitted changes:
 4. Block commit if CRITICAL or HIGH issues found
 
 Never approve code with security vulnerabilities!
+
+## Related Agents
+
+This command invokes the `code-reviewer` and `security-reviewer` agents defined in:
+`~/.cursor/agents/code-reviewer.md`
+`~/.cursor/agents/security-reviewer.md`
+
+And can reference the `security-review` skill at:
+`~/.cursor/skills/security-review/SKILL.md`

@@ -1,3 +1,7 @@
+---
+description: Extract reusable patterns from the session and save them as a Cursor skill (folder + SKILL.md).
+---
+
 # /learn - Extract Reusable Patterns
 
 Analyze the current session and extract any patterns worth saving as skills.
@@ -31,26 +35,43 @@ Look for:
    - Architecture decisions made
    - Integration patterns
 
-## Output Format
+## Output format (Cursor skills)
 
-Create a skill file at `~/.cursor/skills/learned/[pattern-name].md`:
+Cursor expects each skill as a **directory** containing **`SKILL.md`** (not a bare `.md` at the skill root).
+
+**Primary location (global, learned patterns):** create:
+
+`~/.cursor/skills/learned/<pattern-name>/SKILL.md`
+
+Use a short, kebab-case `pattern-name` (folder name = skill identifier).
+
+### SKILL.md template
 
 ```markdown
+---
+name: learned-<pattern-name>
+description: When this pattern applies and what it does (one or two sentences).
+---
+
 # [Descriptive Pattern Name]
 
 **Extracted:** [Date]
 **Context:** [Brief description of when this applies]
 
 ## Problem
+
 [What problem this solves - be specific]
 
 ## Solution
+
 [The pattern/technique/workaround]
 
 ## Example
+
 [Code example if applicable]
 
 ## When to Use
+
 [Trigger conditions - what should activate this skill]
 ```
 
@@ -58,13 +79,13 @@ Create a skill file at `~/.cursor/skills/learned/[pattern-name].md`:
 
 1. Review the session for extractable patterns
 2. Identify the most valuable/reusable insight
-3. Draft the skill file
-4. Ask user to confirm before saving
-5. Save to `~/.cursor/skills/learned/`
+3. Draft `SKILL.md` using the template above
+4. Ask the user to confirm before saving
+5. Write the file under `learned/<pattern-name>/SKILL.md` at the chosen location
 
 ## Notes
 
 - Don't extract trivial fixes (typos, simple syntax errors)
 - Don't extract one-time issues (specific API outages, etc.)
 - Focus on patterns that will save time in future sessions
-- Keep skills focused - one pattern per skill
+- Keep skills focused — one pattern per skill folder

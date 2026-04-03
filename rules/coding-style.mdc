@@ -1,6 +1,6 @@
 ---
 description: "Coding standards: immutability, file organization, error handling, input validation, and code quality checklist"
-alwaysApply: false
+alwaysApply: true
 ---
 
 # Coding Style

@@ -1,3 +1,7 @@
+---
+description: Refresh token-lean codemaps under codemaps/ and diff against previous versions.
+---
+
 # Update Codemaps
 
 Analyze the codebase structure and update architecture documentation:

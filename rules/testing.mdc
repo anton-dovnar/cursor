@@ -1,6 +1,6 @@
 ---
 description: "Testing standards: TDD workflow, minimum 80% coverage, unit/integration/E2E test requirements"
-alwaysApply: false
+alwaysApply: true
 ---
 
 # Testing Requirements

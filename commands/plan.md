@@ -108,5 +108,5 @@ After planning:
 
 ## Related Agents
 
-This command invokes the `planner` agent located at:
-`~/cursor/agents/planner.md`
+This command invokes the `planner` agent defined in:
+`~/.cursor/agents/planner.md`

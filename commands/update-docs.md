@@ -1,3 +1,7 @@
+---
+description: Regenerate docs from .env.example and project sources; flag stale documentation.
+---
+
 # Update Documentation
 
 Sync documentation from source-of-truth:

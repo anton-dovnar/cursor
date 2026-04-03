@@ -1,6 +1,6 @@
 ---
 description: "Security requirements: secret management, input validation, SQL injection prevention, XSS/CSRF protection, and security review protocol"
-alwaysApply: false
+alwaysApply: true
 ---
 
 # Security Guidelines

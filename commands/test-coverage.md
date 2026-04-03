@@ -1,3 +1,7 @@
+---
+description: Analyze pytest coverage, add tests to reach 80%+ threshold, report before/after metrics.
+---
+
 # Test Coverage
 
 Analyze test coverage and generate missing tests:
