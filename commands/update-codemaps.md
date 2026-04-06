@@ -20,5 +20,5 @@ Analyze the codebase structure and update architecture documentation:
 
 ## Related Agents
 
-This command invokes the `tdd-guide` agent defined in:
+This command invokes the `doc-updater` agent defined in:
 `~/.cursor/agents/doc-updater.md`
