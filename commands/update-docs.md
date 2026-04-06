@@ -27,3 +27,8 @@ Sync documentation from source-of-truth:
    - List for manual review
 
 5. Show diff summary
+
+## Related Agents
+
+This command invokes the `tdd-guide` agent defined in:
+`~/.cursor/agents/doc-updater.md`

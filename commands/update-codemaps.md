@@ -17,3 +17,8 @@ Analyze the codebase structure and update architecture documentation:
 4. If changes > 30%, request user approval before updating
 5. Add freshness timestamp to each codemap
 6. Save reports to .reports/codemap-diff.txt
+
+## Related Agents
+
+This command invokes the `tdd-guide` agent defined in:
+`~/.cursor/agents/doc-updater.md`
