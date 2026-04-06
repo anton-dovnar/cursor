@@ -28,11 +28,11 @@ Load detailed guidance based on context:
 
 | Topic | Reference | Load When |
 |-------|-----------|-----------|
-| Service Boundaries | `references/decomposition.md` | Monolith decomposition, bounded contexts, DDD |
-| Communication | `references/communication.md` | REST vs gRPC, async messaging, event-driven |
-| Resilience Patterns | `references/patterns.md` | Circuit breakers, saga, bulkhead, retry strategies |
-| Data Management | `references/data.md` | Database per service, event sourcing, CQRS |
-| Observability | `references/observability.md` | Distributed tracing, correlation IDs, metrics |
+| Service Boundaries | `~/.cursor/skills/microservices-architect/references/decomposition.md` | Monolith decomposition, bounded contexts, DDD |
+| Communication | `~/.cursor/skills/microservices-architect/references/communication.md` | REST vs gRPC, async messaging, event-driven |
+| Resilience Patterns | `~/.cursor/skills/microservices-architect/references/patterns.md` | Circuit breakers, saga, bulkhead, retry strategies |
+| Data Management | `~/.cursor/skills/microservices-architect/references/data.md` | Database per service, event sourcing, CQRS |
+| Observability | `~/.cursor/skills/microservices-architect/references/observability.md` | Distributed tracing, correlation IDs, metrics |
 
 ## Implementation Examples
 
