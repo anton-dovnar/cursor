@@ -90,3 +90,7 @@ Before marking work complete:
 - [ ] No mutation (immutable patterns used)
 - [ ] Type hints added where meaningful
 - [ ] Docstrings for public functions/classes
+
+## Agent Support
+
+- **architect** - Use PROACTIVELY for new features
