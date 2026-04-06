@@ -420,7 +420,7 @@ async def test_creates_session_successfully(workspace_service):
 
 ## Related Skills
 
-- `coding-standards.md` - General coding best practices
-- `server-patterns.md` - API and database patterns
-- `client-patterns.md` - React and Next.js patterns
-- `tdd-workflow/` - Test-driven development methodology
+- `~/.cursor/skills/coding-standards/SKILL.md` - General coding best practices
+- `~/.cursor/skills/server-patterns/SKILL.md` - API and database patterns
+- `~/.cursor/skills/client-patterns/SKILL.md` - React and Next.js patterns
+- `~/.cursor/skills/tdd-workflow/SKILL.md` - Test-driven development methodology
